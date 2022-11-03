@@ -1,4 +1,5 @@
-firstL -- TIMESTAMP (example: topherM -- 1999-12-31 23:59)
+kostaD -- 2022-11-02 20:11
+ Uploaded design doc v1
 
-Most recent entry at the bottom
+*Most recent entry at the bottom*
 
