@@ -7,7 +7,7 @@
  
 ## Description:
 
-This project is a Blog Website created using a fask and sql3 backend and html frontend.
+This project is a Blog Website created using a flask and sql3 backend and html frontend.
 
 Some key features are:
  - Owning an account
