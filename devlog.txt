@@ -27,3 +27,13 @@ kostaD -- 2022-11-04 21:50
 --------------------------------------------------------------
  Uploaded & set up design doc template.
 ==============================================================
+
+andrewP -- 2022-11-11 17:00-20:00
+--------------------------------------------------------------
+ Worked on sql python functionality
+ created a working module that creates a table 
+ Added sql place holders (https://docs.python.org/3/library/sqlite3.html) to avoid injection attacks
+ Added selection function to find one entry(https://zetcode.com/db/sqlite/select/)
+ Added a bunch of sqlite3 middleware functions that could be used to change tables
+==============================================================
+
