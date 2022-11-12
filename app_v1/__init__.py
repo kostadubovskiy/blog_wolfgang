@@ -13,9 +13,7 @@ def index():
     if 'username' in session and 'password' in session:
         curr_usr = session['username']
         print(curr_usr)
-        redirect(url_for('index'))
         return render_template('index.html', username=curr_usr)
-    #return render_template('login.html', msg=msg)
     return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -26,8 +24,7 @@ def login():
         
         if session['username'] in usernames:
             if passwords[usernames.index(session['username'])] == session['password']:
-                redirect(url_for('index'))
-                return render_template('index.html', username=session['username'])
+                return redirect(url_for('index'))
             else:
                 msg = 'Wrong password'
                 return render_template('login.html', msg=msg)
@@ -41,7 +38,6 @@ def logout():
     # remove the username from the session if it's there
     session.pop('username', None)
     session.pop('password', None)
-    print(session)
     return redirect(url_for('index'))
     
 if __name__ == "__main__": #false if this file imported as module
