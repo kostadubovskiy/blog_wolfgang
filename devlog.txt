@@ -28,6 +28,38 @@ kostaD -- 2022-11-04 21:50
  Uploaded & set up design doc template.
 ==============================================================
 
+andrewP -- 2022-11-08 09:14
+--------------------------------------------------------------
+ Worked on SQL backend
+==============================================================
+
+kostaD & aaronG -- 2022-11-08 09:14
+--------------------------------------------------------------
+ Worked on Flask and HTML frontend
+==============================================================
+
+andrewP -- 2022-11-09 09:15
+--------------------------------------------------------------
+ Worked on SQL backend
+==============================================================
+
+kostaD & aaronG -- 2022-11-09 09:15
+--------------------------------------------------------------
+ Worked on Flask and HTML frontend
+ Struggling to make the login work
+==============================================================
+
+andrewP -- 2022-11-10 09:20
+--------------------------------------------------------------
+ Worked on SQL backend
+==============================================================
+
+kostaD & aaronG -- 2022-11-10 09:20
+--------------------------------------------------------------
+ Worked on Flask and HTML frontend
+ Almost fixed login
+==============================================================
+
 andrewP -- 2022-11-11 17:00-20:00
 --------------------------------------------------------------
  Worked on sql python functionality
@@ -37,3 +69,8 @@ andrewP -- 2022-11-11 17:00-20:00
  Added a bunch of sqlite3 middleware functions that could be used to change tables
 ==============================================================
 
+kostaD -- 2022-11-11 19:20-22:50
+--------------------------------------------------------------
+ Created app_v2, where there is complete functionality of logging in, logging out, and creating a new account.
+ On the account side of things, all that's left is to tie everything to tables and databases rather than the two lists ```usernames``` and ```passwords```
+==============================================================
