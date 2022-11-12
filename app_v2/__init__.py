@@ -11,6 +11,7 @@ passwords = ['goofy', 'ah']
 @app.route('/')
 def index():
     if 'username' not in session and 'password' not in session:
+        session['logged_in'] = False
         return redirect(url_for('login'))
     
     curr_usr = session['username']
