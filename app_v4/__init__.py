@@ -8,17 +8,17 @@ app.secret_key = 'skey'
 usernames=['yee', 'ah']
 passwords = ['goofy', 'ah']
 
+
 @app.route('/')
 def index():
     if 'username' not in session and 'password' not in session:
         return redirect(url_for('login'))
-    
     curr_usr = session['username']
     return render_template('index.html', username=curr_usr)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if session['logged_in'] == False and request.method == 'POST': # and 'username' in session and 'password' in session:
+    if 'username' not in session and 'password' not in session and request.method == 'POST': # and 'username' in session and 'password' in session:
         session['username'] = request.form['username']
         session['password'] = request.form['password']
 
@@ -43,7 +43,7 @@ def add_account():
         session['npassword'] = request.form['npassword']
         session['vnusername'] = request.form['vnusername']
         session['vnpassword'] = request.form['vnpassword']
-    
+
     if 'nusername' in session and 'npassword' in session:
         if session['nusername'] ==  session['vnusername'] and session['npassword'] == session['vnpassword']:
             new_usr = session['nusername']
@@ -57,12 +57,12 @@ def add_account():
             session.pop('username', None)
             session.pop('password', None)
             return redirect(url_for('login'))
-        
+
         elif session['nusername'] != session['vnusername']:
             if session['npassword'] != session['vnpassword']:
                 msg = "Usernames and passwords don't match"
                 return render_template('add_account.html', msg=msg)
-            else: 
+            else:
                 msg = "Usernames don't match"
                 return render_template('add_account.html', msg=msg)
         else:
@@ -77,8 +77,8 @@ def logout():
     session.pop('password', None)
     session['logged_in'] = False
     return redirect(url_for('index'))
-    
+
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
-    app.debug = True 
+    app.debug = True
     app.run()
