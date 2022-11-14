@@ -88,12 +88,25 @@ def delete_entry(table_name,data: tuple):
     return ret_msg
 
 
-# def entry_exists(table_name,
+def entry_exists(table_name,data: tuple):
+    db,c = open_connection() # open connection
+
+    c.execute(f'''select exists( select {data[0]} from {table_name} where {data[0]} = "{data[1]}" )''');
+    ret_msg = c.fetchone()[0]
+
+    if ret_msg == 0:
+        ret_msg = False
+    else:
+        ret_msg = True
+
+    close_connection(db) # close and save
+    return ret_msg
 
 
 
-# print (read_entry("blogs",("blog_id",2),"*"))
-# print (delete_entry("blogs",("blog_id","2")))
+# add_entry("usernames",("kosta","pp"))
+# add_entry("usernames",("aaron","pp"))
+# print(entry_exists("usernames",("username","kosta")))
 
 
 

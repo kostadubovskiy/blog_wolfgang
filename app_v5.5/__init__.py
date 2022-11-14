@@ -45,8 +45,10 @@ def login():
         session['password'] = request.form['password']
 
     if 'username' in session:
-        if session['username'] in usernames:
-            if passwords[usernames.index(session['username'])] == session['password']:
+        print()
+        if entry_exists("usernames", ("username", session['username'])):
+            print (read_entry("usernames", ("username", session['username'])))
+            if read_entry("usernames", ("username", session['username'])[1]) == session['password']:
                 session['logged_in'] = True
                 return redirect(url_for('index'))
             else:
@@ -70,7 +72,11 @@ def add_account():
         if session['nusername'] ==  session['vnusername'] and session['npassword'] == session['vnpassword']:
             new_usr = session['nusername']
             new_pass = session['npassword']
-            add_entry("usernames", (new_usr, new_pass))
+            if not entry_exists("usernames", ("username",new_usr)):
+                add_entry("usernames", (new_usr, new_pass))
+            else:
+                msg = "Username already taken"
+                return render_template("add_account.html", msg=msg)
             session.pop('nusername', None)
             session.pop('npassword', None)
             session.pop('vnusername', None)
