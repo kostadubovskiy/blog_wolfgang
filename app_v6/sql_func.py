@@ -45,7 +45,7 @@ def add_entry(table_name,data: tuple):
 def read_entry(table_name,query: tuple, *args):
     db,c = open_connection() # open connection
     # execute the command, and conconate the *args
-    print(f'''select {",".join(args)} from {table_name} where {query[0]} = "{query[1]}"''')
+    # print(f'''select {",".join(args)} from {table_name} where {query[0]} = "{query[1]}"''')
     c.execute(f'''select {",".join(args)} from {table_name} where {query[0]} = "{query[1]}"''')
     ret_msg = c.fetchone()
     close_connection(db) # close and save
@@ -78,7 +78,7 @@ def delete_entry(table_name,data: tuple):
 
     ret_msg = read_entry(table_name,data,"*")
 
-    c.execute(f'''delete from {table_name} where {data[0]} = ?''', data[1])
+    c.execute(f'''delete from {table_name} where {data[0]} = "{data[1]}"''')
 
     close_connection(db) # close and save
     return ret_msg
@@ -104,7 +104,7 @@ def entry_exists(table_name,data: tuple):
 # add_entry("usernames",("aaron","pp"))
 # print(entry_exists("usernames",("username","kosta")))
 
-print(entry_exists("usernames", ("username", "kosta")))
+# print(entry_exists("usernames", ("username", "kosta")))
 
 
 
