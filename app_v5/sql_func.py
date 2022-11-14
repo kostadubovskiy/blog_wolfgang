@@ -81,11 +81,9 @@ def edit_entry(table_name,query: tuple, **kwargs):
 # print(edit_entry("students",("id",9000),name="brotha",date="11/9/12",gpa="79%"))
 # print(read_entry("students",("id",9000),"name","date","gpa"))
 
+
+
 add_entry("usernames",("drew","pp"))
-
-
-
-
 
 
 
