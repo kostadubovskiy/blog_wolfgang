@@ -70,8 +70,7 @@ def add_account():
         if session['nusername'] ==  session['vnusername'] and session['npassword'] == session['vnpassword']:
             new_usr = session['nusername']
             new_pass = session['npassword']
-            usernames.append(new_usr)
-            passwords.append(new_pass)
+            add_entry("usernames", new_usr, new_pass)
             session.pop('nusername', None)
             session.pop('npassword', None)
             session.pop('vnusername', None)
@@ -103,7 +102,7 @@ def logout():
 @app.route('/delete_account')
 def delete_account():
     # remove the username from the session if it's there
-    usr_index = usernames.index(session['username'])
+    usr_index = del_user("usernames", session['username']) 
     usernames.pop(usr_index)
     passwords.pop(usr_index)
     session.pop('username', None)
