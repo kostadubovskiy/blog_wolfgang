@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+
+    <body>
+        <form action="/logout" id="logout">
+            <input type="submit" value="Logout"/>
+        </form>
+        
+        <div class="response">
+            <h2>
+                Logged in as yee
+            </h2>
+        </div>
+
+        <div class="arrow">
+            <div class="curve"></div>
+            <div class="point"></div>
+            <div class ="label">Logout here</div>
+        </div>
+
+        
+    </body>
+</html>
