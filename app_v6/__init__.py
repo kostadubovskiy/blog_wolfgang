@@ -116,6 +116,13 @@ def delete_account():
     session['logged_in'] = False
     return redirect(url_for('index'))
 
+
+
+
+@app.route('/create')
+def create_blogs():
+    return "hi"
+
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True
