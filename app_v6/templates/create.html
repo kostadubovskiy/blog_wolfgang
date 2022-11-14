@@ -70,20 +70,22 @@ body {
         <form action="/">
             <input type="submit" value="Back"/>
         </form>
-        <div class="card">
+        <!-- <div class="card">
           <h1>
-            <form action="/create">
-            <textarea id="freeform" name="freeform" rows="1" cols="100%">
-<input type="text" name = "blog_title" value="Back"/> Title Here...
-            </textarea>
+            <form action="/create"
+              
+              <!-- <input type="submit" name ="blog_title" value="blog_title"/> -->
             </form>
           </h1>
           <h5>Today's Date</h5>
           <div class="grayBox" style="height:10%;">
-        <textarea id="freeform" name="freeform" rows="10%" cols="108%">
-Enter text here...
-</textarea>
-        </div>
-        <button type="button">Post!</button>
+          
+          </div>
+        </div> -->
+        <form action="/home">
+          <textarea id="freeform" name="title" rows="1" cols="100%">Title Here...</textarea>
+          <textarea id="freeform" name="body" rows="10%" cols="108%">Enter text here...</textarea>
+          <input type="submit" value="Submit"></input>
+        </form>
     </body>
 </html>

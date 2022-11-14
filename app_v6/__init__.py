@@ -2,12 +2,15 @@ from flask import Flask  # facilitate flask webserving
 from flask import render_template  # facilitate jinja templating
 from flask import redirect, request, session, url_for
 from sql_func import *
+from datetime import date
 
 app = Flask(__name__)    #create Flask object
 
 app.secret_key = 'skey'
 usernames=['yee', 'ah']
 passwords = ['goofy', 'ah']
+global blog_num
+blog_num = 0
 
 
 @app.route('/')
@@ -109,14 +112,24 @@ def logout():
 @app.route('/delete_account')
 def delete_account():
     # remove the username from the session if it's there
-    print(session['username'])
     delete_entry("usernames", ("username", session['username'])) 
     session.pop('username', None)
     session.pop('password', None)
     session['logged_in'] = False
     return redirect(url_for('index'))
 
-
+@app.route('/post_blog')
+def post_blog(): 
+    title = request.form['title']
+    body = request.form['body']
+    blog_num += 1
+    today = date.today()
+    print(f"{title}, {body}, {blog_num}, {today}, {session['username']}")
+    add_entry("blogs", (blog_num, session['username'], title, today, "blurb", body))
+    print(f"{title}, {body}, {blog_num}, {today}, {session['username']}")
+    session.pop('title', None)
+    session.pop('body', None)
+    return redirect(url_for('home'))
 
 
 @app.route('/create')
