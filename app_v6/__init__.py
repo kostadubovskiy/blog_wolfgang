@@ -109,9 +109,8 @@ def logout():
 @app.route('/delete_account')
 def delete_account():
     # remove the username from the session if it's there
-    usr_index = delete_entry("usernames", session['username']) 
-    usernames.pop(usr_index)
-    passwords.pop(usr_index)
+    print(session['username'])
+    delete_entry("usernames", ("username", session['username'])) 
     session.pop('username', None)
     session.pop('password', None)
     session['logged_in'] = False
