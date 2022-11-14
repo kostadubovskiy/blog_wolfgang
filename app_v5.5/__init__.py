@@ -45,10 +45,11 @@ def login():
         session['password'] = request.form['password']
 
     if 'username' in session:
-        print()
+        # print(session)
+        # print(entry_exists("usernames", ("username", session['username'])))
         if entry_exists("usernames", ("username", session['username'])):
-            print (read_entry("usernames", ("username", session['username'])))
-            if read_entry("usernames", ("username", session['username'])[1]) == session['password']:
+            # print (read_entry("usernames", ("username", session['username']),"password"))
+            if read_entry("usernames", ("username", session['username']),"password")[0] == session['password']:
                 session['logged_in'] = True
                 return redirect(url_for('index'))
             else:

@@ -42,6 +42,8 @@ def add_entry(table_name,data: tuple):
     close_connection(db) # close and save
 
 
+
+
 # read an entry from a specific table that already exists
 def read_entry(table_name,query: tuple, *args):
     db,c = open_connection() # open connection
@@ -106,7 +108,7 @@ def entry_exists(table_name,data: tuple):
 
 # add_entry("usernames",("kosta","pp"))
 # add_entry("usernames",("aaron","pp"))
-print(entry_exists("usernames",("username","kosta")))
+# print(entry_exists("usernames",("username","kosta")))
 
 
 

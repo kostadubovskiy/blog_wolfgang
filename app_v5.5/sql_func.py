@@ -35,23 +35,20 @@ BLOGS(blog_id PRIMARY KEY, author NOT NULL,title NOT NULL,post_date NOT NULL,con
 # adds an entry to a specific table that already exists
 def add_entry(table_name,data: tuple):
     db,c = open_connection() # open connection
-
     # execute the command, and use sqls place holders
     c.execute(f'''insert into {table_name} values({("?,"*len(data))[:-1]})''',data)
-
     close_connection(db) # close and save
+
 
 
 # read an entry from a specific table that already exists
 def read_entry(table_name,query: tuple, *args):
     db,c = open_connection() # open connection
-
     # execute the command, and conconate the *args
+    print(f'''select {",".join(args)} from {table_name} where {query[0]} = "{query[1]}"''')
     c.execute(f'''select {",".join(args)} from {table_name} where {query[0]} = "{query[1]}"''')
     ret_msg = c.fetchone()
-
     close_connection(db) # close and save
-    
     return ret_msg
 
 # edits an entry (only one) in a specific table (returns original entry)
@@ -65,7 +62,6 @@ def edit_entry(table_name,query: tuple, **kwargs):
     ret_msg = []
     for vals in column_list:
         ret_msg.append({vals:read_entry(table_name,query,vals)[0]})
-
     # to format the command
     inject_tmpl = ""
     for val in column_list:
@@ -107,6 +103,8 @@ def entry_exists(table_name,data: tuple):
 # add_entry("usernames",("kosta","pp"))
 # add_entry("usernames",("aaron","pp"))
 # print(entry_exists("usernames",("username","kosta")))
+
+print(entry_exists("usernames", ("username", "kosta")))
 
 
 
