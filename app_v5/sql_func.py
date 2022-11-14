@@ -88,12 +88,12 @@ def delete_entry(table_name,data: tuple):
     return ret_msg
 
 
-# def entry_exists
+# def entry_exists(table_name,
 
 
 
-print (read_entry("blogs",("blog_id",2),"*"))
-print (delete_entry("blogs",("blog_id","2")))
+# print (read_entry("blogs",("blog_id",2),"*"))
+# print (delete_entry("blogs",("blog_id","2")))
 
 
 
