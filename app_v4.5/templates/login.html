@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>login page yurr</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
     </head>
 
     <body>
@@ -13,5 +13,9 @@
             <input type="submit">
         </form>
         <p>{{msg}}</p>
+
+        <form action="/add_account" id="add_account">
+            <input type="submit" value="Create An Account"/>
+        </form>
     </body>
 </html>
