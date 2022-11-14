@@ -1,6 +1,7 @@
 from flask import Flask  # facilitate flask webserving
 from flask import render_template  # facilitate jinja templating
 from flask import redirect, request, session, url_for
+from sql_func import *
 
 app = Flask(__name__)    #create Flask object
 
