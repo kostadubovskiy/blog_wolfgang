@@ -15,7 +15,14 @@ def close_connection(db):
     db.close()  #close database
 
 '''THIS FUNCTION SHOULD NEVER BE RUN, ALL TABLES SHOULD BE CREATED MANUALLY BEFORE THEY ARE USED'''
-# # creates table if and only it doesn't exist yet (should only be used at initiation)
+
+'''
+STRUCTURE OF THE DATABASES (SPECS):
+
+USERNAMES(username NOT NULL PRIMARY KEY,password)
+BLOGS(blog_id PRIMARY KEY, author NOT NULL,title NOT NULL,post_date NOT NULL,content_description,content_body)
+'''
+# creates table if and only it doesn't exist yet (should only be used at initiation)
 # def create_table(table_name,data: tuple):
 #     db,c = open_connection() # open connection
 
@@ -45,7 +52,7 @@ def read_entry(table_name,query: tuple, *args):
 
     close_connection(db) # close and save
     
-    return list(ret_msg)
+    return ret_msg
 
 # edits an entry (only one) in a specific table (returns original entry)
 def edit_entry(table_name,query: tuple, **kwargs):
@@ -69,19 +76,50 @@ def edit_entry(table_name,query: tuple, **kwargs):
     close_connection(db) # close and save
     return ret_msg
 
+# deletes an entry and returns the original row
+def delete_entry(table_name,data: tuple):
+    db,c = open_connection() # open connection
+
+    ret_msg = read_entry(table_name,data,"*")
+
+    c.execute(f'''delete from {table_name} where {data[0]} = ?''', data[1])
+
+    close_connection(db) # close and save
+    return ret_msg
 
 
-# create_table("students",("name","id","date","gpa"))
-add_entry("students",("andrew","9000","null","66%"))
-add_entry("students",("kosta","9001","null","null"))
-add_entry("students",("matt","001","null","null"))
-add_entry("students",("bruv","8989","null","null"))
-print(read_entry("students",("id",9000),"name","date","gpa"))
-
-print(edit_entry("students",("id",9000),name="brotha",date="11/9/12",gpa="79%"))
-print(read_entry("students",("id",9000),"name","date","gpa"))
+# def entry_exists(table_name,
 
 
+
+# print (read_entry("blogs",("blog_id",2),"*"))
+# print (delete_entry("blogs",("blog_id","2")))
+
+
+
+
+
+# if __name__ == "__main__":
+
+#     create_table("blogs",(
+#         "blog_id PRIMARY KEY NOT NULL", "author TEXT NOT NULL", "title TEXT NOT NULL", "post_date TEXT NOT NULL","content_description TEXT","content_body TEXT"
+#         ))
+
+#     create_table("usernames",("username TEXT NOT NULL PRIMARY KEY", "password TEXT NOT NULL"))
+
+#     # add_entry("usernames",("drew","pp"))
+#     add_entry("blogs",("1","drew","test","11/4/2022","this is a test","shout out my label / I'm in this ***** with TB"))
+
+
+    # create_table("students",("name","id","date","gpa"))
+    # add_entry("students",("andrew","9000","null","66%"))
+    # add_entry("students",("kosta","9001","null","null"))
+    # add_entry("students",("matt","001","null","null"))
+    # add_entry("students",("bruv","8989","null","null"))
+    # print(read_entry("students",("id",9000),"name","date","gpa"))
+
+    # print(edit_entry("students",("id",9000),name="brotha",date="11/9/12",gpa="79%"))
+    # print(read_entry("students",("id",9000),"name","date","gpa"))
 
 
 
