@@ -61,7 +61,9 @@ def blog():
     usr="John Smith"
     for blog_info in all_ids:
         blog_info = list(blog_info)
+        print(session['viewing_blog_id'])
         if blog_info[0] == session['viewing_blog_id']:
+            print("made it")
             title=blog_info[3]
             body=blog_info[2]
             usr=blog_info[1]
