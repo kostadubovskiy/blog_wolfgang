@@ -19,11 +19,6 @@ Some key features are:
 ## Launch Codes:
 
 1. First clone the repo onto your machine - the ssh key can be found if you click on the big Green Button that says code - **or just run the below command in your terminal**
-    1a. Install necessary prerequisites through running this command
-    ```
-    pip install -r requirements.txt
-    ```
-    1b. Run this command to clone
     ```
     bash-3.2$ git clone git@github.com:kostadubovskiy/p0_wolfgang.git
     ```
@@ -33,7 +28,7 @@ Some key features are:
 
 3. Download all of the necessary modules and libraries by running the following command in your terminal
 
-    ```bash-3.2$ tbd```
+    ```bash-3.2$ pip install -r requirements.txt```
 
 4. Navigate to the Python script on your machine
 
