@@ -1,8 +1,8 @@
 # Blog Website by AKA WOLFGANG
 
 ## Roster with Roles
- - Andrew: SQL, Avid Ski Enjoyer (Vermont goer)
- - Aaron: Front-End
+ - Andrew: SQL, Avid Ski Enjoyer (Vermont goer).
+ - Aaron: Front-End, Middle-Ware Assistant.
  - Kosta(Project Manager): Python Middle-Ware Master
 
 ## Description:
