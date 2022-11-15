@@ -19,9 +19,9 @@ Some key features are:
 ## Launch Codes:
 
 1. First clone the repo onto your machine - the ssh key can be found if you click on the big Green Button that says code - **or just run the below command in your terminal**
-    ```
-    bash-3.2$ git clone git@github.com:kostadubovskiy/p0_wolfgang.git
-    ```
+    
+    ```bash-3.2$ git clone git@github.com:kostadubovskiy/p0_wolfgang.git```
+    
 2. Enter the repository
 
     ```bash-3.2$ cd p0_wolfgang```
