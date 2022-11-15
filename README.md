@@ -26,7 +26,7 @@ Some key features are:
 
     ```bash-3.2$ cd p0_wolfgang```
 
-3. Download all of the necessary modules and libraries by running the following command in your terminal
+3. Download all of the necessary modules and libraries by running the following command in your terminal (for some devices use ```pip3``` instead)
 
     ```bash-3.2$ pip install -r requirements.txt```
 
