@@ -58,8 +58,8 @@ def home():
             my_blogs.append(id)
 
     blogs = [0,0,0,0,0]
-    if len(my_blogs) == 0:
-        return render_template('home.html',text="no blogs published")
+    if len(my_blogs) < 5:
+        return render_template('home.html',text="not enough blogs published")
     if len(my_blogs) >= 5:
         for i in range(5):
             blogs[i] = list(random.choice(my_blogs))
@@ -73,6 +73,8 @@ def home():
         print(request.form['blog_id'])
         session['viewing_blog_id'] = request.form['blog_id']
         return redirect(url_for('blog'))
+
+    print(blogs)
 
     return render_template('home.html',\
         blog1=blogs[0][0], blog2=blogs[1][0], blog3=blogs[2][0], blog4=blogs[3][0], blog5=blogs[4][0],\
