@@ -165,16 +165,15 @@
 
     </style>
     <body>
-        <h1>Please Login</h1>
-        <form method="POST">
-            <input type="text" name="username">
-            <input type="password" name="password">
+        <a href="/">Back</a>
+        <form method="POST" style="opacity:0.5;">
+            <input type="text" name="nusername" value="Username">
+            <input type="password" name="npassword" value="Password">
+            <br>
+            <input type="text" name="vnusername" value="Verify Username">
+            <input type="password" name="vnpassword" value="Verify Password">
             <input type="submit">
         </form>
         <p>{{msg}}</p>
-
-        <form action="/add_account" id="add_account">
-            <input type="submit" value="Create An Account"/>
-        </form>
     </body>
 </html>
