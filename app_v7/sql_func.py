@@ -39,8 +39,6 @@ def add_entry(table_name,data: tuple):
     c.execute(f'''insert into {table_name} values({("?,"*len(data))[:-1]})''',data)
     close_connection(db) # close and save
 
-
-
 # read an entry from a specific table that already exists
 def read_entry(table_name,query: tuple, *args):
     db,c = open_connection() # open connection
@@ -50,6 +48,16 @@ def read_entry(table_name,query: tuple, *args):
     ret_msg = c.fetchone()
     close_connection(db) # close and save
     return ret_msg
+
+def read_allcol(table_name,*args):
+    db,c = open_connection() # open connection
+    # execute the command, and conconate the *args
+    # print(f'''select {",".join(args)} from {table_name} where {query[0]} = "{query[1]}"''')
+    c.execute(f'''select {",".join(args)} from {table_name}''')
+    ret_msg = c.fetchall()
+    close_connection(db) # close and save
+    return ret_msg
+
 
 # edits an entry (only one) in a specific table (returns original entry)
 def edit_entry(table_name,query: tuple, **kwargs):
