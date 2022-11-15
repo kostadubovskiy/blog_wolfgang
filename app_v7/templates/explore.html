@@ -1,21 +1,21 @@
 <!DOCTYPE html>
- <!-- Ipsum Generator : https://pirateipsum.me/#scrollstop -->
+
 <html>
     <head>
         <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
     </head>
 
     <body>
-      <form action="/logout" class="logout">
-        <input type="submit" name="logout" id="logout" value="Logout"/>
-      </form>
-      <style> </style>
-      <form action="/">
-          <input type="submit" value="Back"/>
-      </form>
-
-      <div class="blogs">
-
-      </div>
+        <form action="/">
+            <input type="submit" value="Back"/>
+        </form>
+        <h1>Explore!</h1>
+        <div>
+            <form action="/blog" method="POST"><input type="submit" name="blog_id" value={{blog1_title}}></form> <br/>
+            <form action="/blog" method="POST"><input type="submit" name="blog_id" value={{blog2_title}}></form> <br/>
+            <form action="/blog" method="POST"><input type="submit" name="blog_id" value={{blog3_title}}></form> <br/>
+            <form action="/blog" method="POST"><input type="submit" name="blog_id" value={{blog5_title}}></form> <br/>
+            <form action="/blog" method="POST"><input type="submit" name="blog_id" value={{blog4_title}}></form> <br/>
+        </div>
     </body>
 </html>

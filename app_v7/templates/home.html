@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-
+ <!-- Ipsum Generator : https://pirateipsum.me/#scrollstop -->
 <html>
     <head>
         <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
     </head>
 
     <body>
-        <form action="/">
-            <input type="submit" value="Back"/>
-        </form>
-        <h1>Home!</h1>
-        <div>
-            {{blogs}}
-        </div>
+      <form action="/logout" class="logout">
+        <input type="submit" name="logout" id="logout" value="Logout"/>
+      </form>
+      <form action="/">
+          <input type="submit" value="Back"/>
+      </form>
+
+      <h1>Home!</h1>
     </body>
 </html>
