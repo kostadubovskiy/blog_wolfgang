@@ -51,13 +51,6 @@ def read_entry(table_name,query: tuple, *args):
     close_connection(db) # close and save
     return ret_msg
 
-def read_last_entry(table_name,query: tuple, *args):
-    db,c = open_connection() # open connection
-    c.execute(f'''select {",".join(args)} from {table_name} ORDER BY {query[0]} DESC LIMIT 1''')
-    ret_msg = c.fetchone()
-    close_connection(db) # close and save
-    return ret_msg
-
 # edits an entry (only one) in a specific table (returns original entry)
 def edit_entry(table_name,query: tuple, **kwargs):
     db,c = open_connection() # open connection
