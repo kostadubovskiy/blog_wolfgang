@@ -24,7 +24,12 @@ def home():
     if 'username' not in session and 'password' not in session:
         return redirect(url_for('login'))
     curr_usr = session['username']
-    return render_template('home.html', username=curr_usr)
+    # all_ids = get_all_ids("blogs", ("blog_id"))
+    blogs = read_entry("blogs", ("blog_id", "*"))
+    # for i in range(2):
+    #     random_id = random.choice(all_ids)
+    
+    return render_template('home.html', blogs=blogs)
 
 @app.route('/explore')
 def explore():
