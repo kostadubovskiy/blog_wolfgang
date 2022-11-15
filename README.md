@@ -29,18 +29,15 @@ Some key features are:
     ```
 2. Enter the repository
 
-    ```bash-3.2$ cd p0_wolfgang
-    ```
+    ```bash-3.2$ cd p0_wolfgang```
 
 3. Download all of the necessary modules and libraries by running the following command in your terminal
 
-    ```bash-3.2$ tbd
-    ```
+    ```bash-3.2$ tbd```
 
 4. Navigate to the Python script on your machine
 
-    ```bash-3.2$ cd app/
-    ```
+    ```bash-3.2$ cd app/```
 
 5. Then start the Blog Website by executing ```__init__.py```
 
