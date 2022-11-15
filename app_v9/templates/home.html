@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <!-- Ipsum Generator : https://pirateipsum.me/#scrollstop -->
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+
+    <body>
+      <form action="/logout" class="logout">
+        <input type="submit" name="logout" id="logout" value="Logout"/>
+      </form>
+      <form action="/">
+          <input type="submit" value="Back"/>
+      </form>
+
+      <h1>Home!</h1>
+
+      <p>{{text}}</p>
+
+      <form method="POST">
+        <label>
+            {{blog1_title}}
+            <input type="submit" name="blog_id" placeholder={{blog1_title}} value={{blog1}}>
+        </label>
+        <label>
+            {{blog2_title}}
+            <input type="submit" name="blog_id" placeholder={{blog2_title}} value={{blog2}}>
+        </label>
+        <label>
+            {{blog3_title}}
+            <input type="submit" name="blog_id" placeholder={{blog3_title}} value={{blog3}}>
+        </label>
+        <label>
+            {{blog4_title}}
+            <input type="submit" name="blog_id" placeholder={{blog5_title}} value={{blog4}}>
+        </label>
+        <label>
+            {{blog5_title}}
+            <input type="submit" name="blog_id" placeholder={{blog4_title}} value={{blog5}}>
+        </label>
+    </form>
+    </body>
+</html>
