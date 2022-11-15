@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+
+    <body>
+      <style> </style>
+        <form action="/">
+            <input type="submit" name="back" value="Back"/>
+        </form>
+        <div class="card">
+          <form method="POST">
+            <input type="text" name="blog_title" value="Enter title here...">
+            <input type="text" name="blog_body" value="Enter body text here...">
+            <input type="text" name="blog_blurb" value="Enter blurb for this blog here...">
+            <input type="submit">
+          </form>
+    </body>
+</html>
