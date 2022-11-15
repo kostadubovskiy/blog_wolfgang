@@ -19,11 +19,12 @@ def index():
     curr_usr = session['username']
     return render_template('index.html', username=curr_usr)
 
-@app.route('/explore')
+@app.route('/explore', methods=['GET', 'POST'])
 def explore():
     if 'username' not in session and 'password' not in session:
         return redirect(url_for('login'))
     curr_usr = session['username']
+
     all_ids = read_allcol("blogs", "blog_id", "author", "title")
     blogs=[0, 0, 0, 0, 0]
     if len(all_ids) >= 5:
@@ -33,7 +34,9 @@ def explore():
             blogs[i][0] = "/explore/" + str(blogs[i][0])
 
     if request.method == 'POST':
-        session['viewing_blog_id'] = request.form['blog']
+        print("hi")
+        print(request.form['blog_id'])
+        session['viewing_blog_id'] = request.form['blog_id']
 
     return render_template('explore.html',\
         blog1=blogs[0][0], blog2=blogs[1][0], blog3=blogs[2][0], blog4=blogs[3][0], blog5=blogs[4][0],\
@@ -57,6 +60,7 @@ def blog():
     body="RIP"
     usr="John Smith"
     for blog_info in all_ids:
+        blog_info = list(blog_info)
         if blog_info[0] == session['viewing_blog_id']:
             title=blog_info[3]
             body=blog_info[2]
