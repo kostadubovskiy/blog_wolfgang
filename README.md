@@ -25,7 +25,7 @@ Some key features are:
     ```
     1b. Run this command to clone
     ```
-    bash-3.2$ git clone git@github.com:kostadubovskiy/p0_wolfgang.git```
+    bash-3.2$ git clone git@github.com:kostadubovskiy/p0_wolfgang.git
     ```
 2. Enter the repository
 
