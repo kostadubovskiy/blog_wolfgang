@@ -6,11 +6,27 @@
     </head>
 
     <body>
-      <style> {
+      <style> 
+      {
       	border: solid black;
       }
 
+      #title_input {
+        margin: 2%;
 
+      }
+
+      #body_input {
+        margin: 2%;
+        width: 30%;
+        height: 200px;
+      }
+
+      #blurb_input {
+        margin: 2%;
+        width: 30%;
+        height: 100px;
+      }
 
       body {
       	background-color: ivory;
@@ -227,9 +243,9 @@
         </div>
         <div class="card">
           <form method="POST">
-            <input type="text" name="blog_title" value="Enter title here...">
-            <input type="text" name="blog_body" value="Enter body text here...">
-            <input type="text" name="blog_blurb" value="Enter blurb for this blog here...">
+            <input type="text" id="title_input" name="blog_title" placeholder="Enter title here...">  <br/>
+            <textarea type="text" id="body_input" name="blog_body" placeholder="Enter body text here..."></textarea> <br/>
+            <textarea type="text" id="blurb_input" name="blog_blurb" placeholder="Enter blurb for this blog here..."></textarea> <br/>
             <input type="submit">
           </form>
     </body>
