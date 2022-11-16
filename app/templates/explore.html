@@ -3,12 +3,23 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
-        <style>
+        
+    </head>
+    <style>
         {
         	border: solid black;
         }
 
+        #blog_button {
+            color: transparent;
+            font-size: 0%;
+            color: none;
+        }
 
+        #blog_label {
+            margin-left: 5%;
+            font-size: large;
+        }
 
         body {
         	background-color: ivory;
@@ -160,10 +171,7 @@
         	margin-left: auto;
         	margin-right: auto;
         }
-
-
-        </style>
-    </head>
+    </style>
 
     <body>
         <form action="/">
@@ -180,25 +188,30 @@
         <h1>Explore!</h1>
         <div>
             <form method="POST">
-                <label>
+                <br>
+                <label id="blog_label">
                     {{blog1_title}}
-                    <input type="submit" name="blog_id" placeholder={{blog1_title}} value={{blog1}}>
+                    <button type="submit" name="blog_id" id="blog_button" placeholder={{blog1_title}} value={{blog1}}></button><br/>
                 </label>
-                <label>
+                <br>
+                <label id="blog_label">
                     {{blog2_title}}
-                    <input type="submit" name="blog_id" placeholder={{blog2_title}} value={{blog2}}>
+                    <button type="submit" name="blog_id" id="blog_button" placeholder={{blog2_title}} value={{blog2}}></button><br/>
                 </label>
-                <label>
+                <br>
+                <label id="blog_label">
                     {{blog3_title}}
-                    <input type="submit" name="blog_id" placeholder={{blog3_title}} value={{blog3}}>
+                    <button type="submit" name="blog_id" id="blog_button" placeholder={{blog3_title}} value={{blog3}}></button><br/>
                 </label>
-                <label>
+                <br>
+                <label id="blog_label">
                     {{blog4_title}}
-                    <input type="submit" name="blog_id" placeholder={{blog5_title}} value={{blog4}}>
+                    <button type="submit" name="blog_id" id="blog_button" placeholder={{blog5_title}} value={{blog4}}></button><br/>
                 </label>
-                <label>
+                <br>
+                <label id="blog_label">
                     {{blog5_title}}
-                    <input type="submit" name="blog_id" placeholder={{blog4_title}} value={{blog5}}>
+                    <button type="submit" name="blog_id" id="blog_button" placeholder={{blog4_title}} value={{blog5}}></button><br/>
                 </label>
             </form>
         </div>
