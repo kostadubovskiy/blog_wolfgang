@@ -34,6 +34,8 @@ def explore():
             blogs[i][0] = blogs[i][0]
 
     if request.method == 'POST':
+        print("hi")
+        print(request.form['blog_id'])
         session['viewing_blog_id'] = request.form['blog_id']
         return redirect(url_for('blog'))
 
