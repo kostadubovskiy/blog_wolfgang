@@ -34,8 +34,6 @@ def explore():
             blogs[i][0] = blogs[i][0]
 
     if request.method == 'POST':
-        print("hi")
-        print(request.form['blog_id'])
         session['viewing_blog_id'] = request.form['blog_id']
         return redirect(url_for('blog'))
 
@@ -59,7 +57,9 @@ def home():
 
     blogs = [0,0,0,0,0]
     if len(my_blogs) < 5:
-        return render_template('home.html',text="not enough blogs published")
+        return render_template('home.html',text="Not enough blogs published", blog1_title="Publish at least 5 blogs!", \
+            blog2_title="Publish at least 5 blogs!", blog3_title="Publish at least 5 blogs!", blog4_title="Publish at least 5 blogs!", \
+                blog5_title="Publish at least 5 blogs!",)
     if len(my_blogs) >= 5:
         for i in range(5):
             blogs[i] = list(random.choice(my_blogs))
